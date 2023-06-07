@@ -242,6 +242,19 @@
     font-size: 16px;
   }
 }
+.right__text--weekend {
+  font-size: 11px;
+}
+@media (min-width: 1362px) {
+  .right__text--weekend {
+    font-size: 13px;
+  }
+}
+@media (min-width: 1920px) {
+  .right__text--weekend {
+    font-size: 16px;
+  }
+}
 .right__text--title {
   color: #878E92;
   border: 1px solid #3D4143;

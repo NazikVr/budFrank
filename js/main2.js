@@ -25,6 +25,7 @@ function changeLanguage() {
       elem.innerHTML = langArr[key][hash];
     }
   }
+  // Беремо ссилку з елемента і добавляємо до неї hash який дорівнює в нас select value тобто абревіатура мови включеної, таким чином нас перекидає на другу сторінку з включеною мовою як і на цій
   let linkLog = document.getElementById('logoC');
   linkLog.href += '#' + hash;
   let linlCont = document.getElementById('contactC');

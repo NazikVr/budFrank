@@ -1,5 +1,6 @@
 @import "vars";
 @import "mixins";
+@import "slider";
 
 * {
   padding: 0;
@@ -248,6 +249,18 @@
       font-size: 16px;
     }
 
+    &--weekend {
+      font-size: 11px;
+
+      @include onDesktop {
+        font-size: 13px;
+      }
+
+      @include onTV {
+        font-size: 16px;
+      }
+    }
+
     &--title {
       color: $title;
       border: 1px solid $border;
@@ -311,126 +324,6 @@
       margin-right: 20px;
     }
   }
-}
-
-.slider {
-  position: relative;
-}
-
-.slick-arrow {
-  position: absolute;
-  z-index: 10;
-  font-size: 0;
-}
-
-.slick-arrow.slick-prev {
-  display: none !important;
-  border: 1px solid #fff;
-  width: 30px;
-  height: 30px;
-  top: 30%;
-  right: 5%;
-  background: url(../images/call_made.png) 0 0 / 100% no-repeat;
-
-  @include onDesktop {
-    display: block !important;
-    z-index: 999 !important;
-  }
-}
-
-.slick-dots {
-  display: none !important;
-  position: absolute;
-  top: 45%;
-  right: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  @include onDesktop {
-    display: block !important;
-  }
-}
-
-.slick-dots .slick-active button {
-  width: 25px !important;
-  border-color: none;
-  outline: none;
-}
-
-.slick-dots li {
-  list-style: none;
-}
-
-.slick-dots button {
-  font-size: 0;
-  width: 10px;
-  height: 10px;
-  color: #fff;
-}
-
-.slick-arrow.slick-next {
-  display: none !important;
-  border: 1px solid #fff;
-  width: 30px;
-  height: 30px;
-  right: 5%;
-  top: 60%;
-  background: url(../images/call_made1.png) 0 0 / 100% no-repeat;
-
-  @include onDesktop {
-    display: block !important;
-    z-index: 999 !important;
-  }
-}
-
-.slider-num {
-  position: absolute;
-  top: 48.5%;
-  right: 8%;
-  color: #fff;
-  font-size: 15px;
-}
-
-.slick-track {
-  // display: flex;
-}
-
-.slick-list {
-  overflow: hidden;
-}
-
-.slider-image {
-  max-width: 100%;
-  height: 100vh;
-  background-image: url(../images/slide1.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.slider-image-2 {
-  max-width: 100%;
-  height: 100vh;
-  background-image: url(../images/slide2.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.slider-image-3 {
-  max-width: 100%;
-  height: 100vh;
-  background-image: url(../images/slide3.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.slider-item {
-  max-width: 100%;
-  height: 100vh;
 }
 
 .header {
@@ -647,4 +540,124 @@
       font-size: 23px;
     }
   }
+}
+
+.slider {
+  position: relative;
+}
+
+.slick-arrow {
+  position: absolute;
+  z-index: 10;
+  font-size: 0;
+}
+
+.slick-arrow.slick-prev {
+  display: none !important;
+  border: 1px solid #fff;
+  width: 30px;
+  height: 30px;
+  top: 30%;
+  right: 5%;
+  background: url(../images/call_made.png) 0 0 / 100% no-repeat;
+
+  @include onDesktop {
+    display: block !important;
+    z-index: 999 !important;
+  }
+}
+
+.slick-dots {
+  display: none !important;
+  position: absolute;
+  top: 45%;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include onDesktop {
+    display: block !important;
+  }
+}
+
+.slick-dots .slick-active button {
+  width: 25px !important;
+  border-color: none;
+  outline: none;
+}
+
+.slick-dots li {
+  list-style: none;
+}
+
+.slick-dots button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  color: #fff;
+}
+
+.slick-arrow.slick-next {
+  display: none !important;
+  border: 1px solid #fff;
+  width: 30px;
+  height: 30px;
+  right: 5%;
+  top: 60%;
+  background: url(../images/call_made1.png) 0 0 / 100% no-repeat;
+
+  @include onDesktop {
+    display: block !important;
+    z-index: 999 !important;
+  }
+}
+
+.slider-num {
+  position: absolute;
+  top: 48.5%;
+  right: 8%;
+  color: #fff;
+  font-size: 15px;
+}
+
+.slick-track {
+  // display: flex;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slider-image {
+  max-width: 100%;
+  height: 100vh;
+  background-image: url(../images/slide1.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.slider-image-2 {
+  max-width: 100%;
+  height: 100vh;
+  background-image: url(../images/slide2.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.slider-image-3 {
+  max-width: 100%;
+  height: 100vh;
+  background-image: url(../images/slide3.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.slider-item {
+  max-width: 100%;
+  height: 100vh;
 }
