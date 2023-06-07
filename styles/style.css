@@ -551,8 +551,9 @@
   }
 }
 .contents__text-first {
-  width: 200px;
-  height: 55px;
+  padding: 10px 20px;
+  width: 250px;
+  min-height: 55px;
   border: 1px solid #fff;
   display: flex;
   align-items: center;
@@ -566,14 +567,14 @@
 @media (min-width: 1362px) {
   .contents__text-first {
     width: 275px;
-    height: 75px;
+    min-height: 75px;
     font-size: 32px;
   }
 }
 @media (min-width: 1920px) {
   .contents__text-first {
     width: 375px;
-    height: 105px;
+    min-height: 105px;
     font-size: 42px;
   }
 }

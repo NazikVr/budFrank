@@ -1,25 +1,52 @@
 <?php
 $tt = [
-  "Contacts" => [
+  "contacts" => [
     "ua" => "Контакти",
+    "rus" => "Контакты",
     "en" => "Contacts",
-    "rus" => "Контакт",
-    "den" => "foo",
-    "den" => "foo",
+    "den" => "Kontakte",
+    "sp" => "Contactos",
   ],
-  "text2" => [
+  "company" => [
     "ua" => "БУДФРАНК",
-    "en" => "budfrank",
     "rus" => "БУДФРАНК",
-    "den" => "sdasdasda",
+    "en" => "BUDFRANK",
+    "den" => "BUDFRANK",
+    "sp" => "BUDFRANK",
   ],
+  "title" => [
+    "ua" => "Будівельна компанія",
+    "rus" => "Строительная компания",
+    "en" => "Construction company",
+    "den" => "Bauunternehmen",
+    "sp" => "Empresa constructora",
+  ],
+  "prefabricated_houses" => [
+    "ua" => "Збірні будинки",
+    "rus" => "Сборные дома",
+    "en" => "Prefabricated houses",
+    "den" => "Fertighäuser",
+    "sp" => "Casas prefabricadas",
+  ],
+  "text" => [
+    "ua" => "Ми виготовляємо збірні<br>
+    будинки, готелі, офіси, лазні,<br>
+    а також дерев'яні конструкції<br>
+    за унікальною американською<br>
+    технологією «MITEK»<br>",
+    "rus" => "Сборные дома",
+    "en" => "Prefabricated houses",
+    "den" => "Fertighäuser",
+    "sp" => "Casas prefabricadas",
+  ],
+
 ];
 
 $lng = "ua";
 if (!empty($_REQUEST["lang"])) {
   $lng = $_REQUEST["lang"];
 }
-if (empty($tt["text2"][$lng])) {
+if (empty($tt["contacts"][$lng])) {
   $lng = "ua";
 }
 ?>
@@ -39,7 +66,7 @@ if (empty($tt["text2"][$lng])) {
 
     <link rel="stylesheet" href="styles/style.css">
     <title>
-      <?php echo $tt["text2"][$lng] ?>
+      <?php echo $tt["company"][$lng] ?>
     </title>
   </head>
 
@@ -67,7 +94,7 @@ if (empty($tt["text2"][$lng])) {
           <a href="/?lang=<?php echo $lng ?>" class="header__logo"></a>
           <div class="header__sub">
             <a href="./contact.php?lang=<?php echo $lng ?>" class="header__contact">
-              Контакти
+              <?php echo $tt["contacts"][$lng] ?>
             </a>
             <select class="header__lang lang">
               <a href="?lang=ua">
@@ -97,23 +124,19 @@ if (empty($tt["text2"][$lng])) {
         <div class="contents__wrapper-first">
           <div class="contents__wrapper-second">
             <div class="contents__subtitle">
-              Будівельна компанія
+              <?php echo $tt["title"][$lng] ?>
             </div>
             <div class="contents__rec"></div>
           </div>
 
           <div class="contents__title">
-            Будфранк
+            <?php echo $tt["company"][$lng] ?>
           </div>
           <div class="contents__text-first">
-            Збірні будинки
+            <?php echo $tt["prefabricated_houses"][$lng] ?>
           </div>
           <div class="contents__text-second">
-            Ми виготовляємо збірні<br>
-            будинки, лазні, офіси, готелі,<br>
-            а також дерев'яні конструкції<br>
-            за унікальною американською<br>
-            технологією «MITEK»<br>
+          <?php echo $tt["text"][$lng] ?>
           </div>
         </div>
       </div>
