@@ -1,3 +1,27 @@
+<?php
+$tt = [
+  "Contacts" => [
+    "ua" => "Контакти",
+    "en" => "Contacts",
+    "rus" => "Контакт",
+    "den" => "foo",
+  ],
+  "text2" => [
+    "ua" => "БУДФРАНК",
+    "en" => "budfrank",
+    "rus" => "БУДФРАНК",
+    "den" => "sdasdasda",
+  ],
+];
+
+$lng = "ua";
+if (!empty($_REQUEST["lang"])) {
+  $lng = $_REQUEST["lang"];
+}
+if (empty($tt["text2"][$lng])) {
+  $lng = "ua";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +32,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Контакти</title>
   </head>
@@ -16,9 +41,9 @@
     <header class="header">
       <div class="container">
         <div class="header__content">
-          <a href="/" class="header__logo header__logo--cont"></a>
+          <a href="/?lang=<?php echo $lng ?>" class="header__logo header__logo--cont"></a>
           <div class="header__sub">
-            <a href="./contact.html" class="header__contact header__contact--cont">
+            <a href="./contact.php?lang=<?php echo $lng ?>" class="header__contact header__contact--cont">
               Контакти
             </a>
             <select class="header__lang lang header__lang--cont">

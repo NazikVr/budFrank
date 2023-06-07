@@ -1,3 +1,28 @@
+<?php
+$tt = [
+  "Contacts" => [
+    "ua" => "Контакти",
+    "en" => "Contacts",
+    "rus" => "Контакт",
+    "den" => "foo",
+    "den" => "foo",
+  ],
+  "text2" => [
+    "ua" => "БУДФРАНК",
+    "en" => "budfrank",
+    "rus" => "БУДФРАНК",
+    "den" => "sdasdasda",
+  ],
+];
+
+$lng = "ua";
+if (!empty($_REQUEST["lang"])) {
+  $lng = $_REQUEST["lang"];
+}
+if (empty($tt["text2"][$lng])) {
+  $lng = "ua";
+}
+?>
 <!DOCTYPE html>
 <html lang="en" class="page">
 
@@ -7,12 +32,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/style.css">
-    <title>БУДФРАНК</title>
+    <title>
+      <?php echo $tt["text2"][$lng] ?>
+    </title>
   </head>
 
   <body class="page__body">
@@ -21,17 +49,14 @@
       <div class="slider">
         <div class="slider-item">
           <div class="slider-image"></div>
-          <!-- <img src="images/slide1.png" alt="" class="slider-image"> -->
         </div>
         <div class="slider-item">
 
           <div class="slider-image-2"></div>
-          <!-- <img src="images/slide1.png" alt="" class="slider-image"> -->
         </div>
         <div class="slider-item">
 
           <div class="slider-image-3"></div>
-          <!-- <img src="images/slide1.png" alt="" class="slider-image"> -->
         </div>
       </div>
     </div>
@@ -39,15 +64,23 @@
     <header class="header">
       <div class="container">
         <div class="header__content">
-          <a href="" class="header__logo"></a>
+          <a href="/?lang=<?php echo $lng ?>" class="header__logo"></a>
           <div class="header__sub">
-            <a href="./contact.html" class="header__contact">
+            <a href="./contact.php?lang=<?php echo $lng ?>" class="header__contact">
               Контакти
             </a>
             <select class="header__lang lang">
-              <option class="ukr" value="Укр">Укр</option>
+              <a href="?lang=ua">
+                <option class="ukr" value="Укр">
+                  Укр
+                </option>
+              </a>
               <option value="Рус">Рус</option>
-              <option value="Eng">Eng</option>
+              <a href="./?lang=en">
+                <option value="Eng">
+                  Eng
+                </option>
+              </a>
               <option value="Нем">Нем</option>
               <option value="Исп">Исп</option>
             </select>
