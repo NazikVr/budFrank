@@ -1,76 +1,3 @@
-<?php
-$tt = [
-  "contacts" => [
-    "ua" => "Контакти",
-    "rus" => "Контакты",
-    "en" => "Contacts",
-    "de" => "Kontakte",
-    "sp" => "Contactos",
-  ],
-  "name1" => [
-    "ua" => "Лук'янчук М.О.",
-    "rus" => "Лукьянчук Н.О.",
-    "en" => "Lukyanchuk M.O.",
-    "de" => "Lukyanchuk M.O.",
-    "sp" => "Lukyanchuk M.O.",
-  ],
-  "status1" => [
-    "ua" => "Засновник",
-    "rus" => "Учредитель",
-    "en" => "Founder",
-    "de" => "Gründer",
-    "sp" => "Fundador",
-  ],
-  "name2" => [
-    "ua" => "Чоповенко О.Г.",
-    "rus" => "Чоповенко А.Г.",
-    "en" => "Chopovenko O.G.",
-    "de" => "Chopovenko O.G.",
-    "sp" => "Chopovenko O.G.",
-  ],
-  "status2" => [
-    "ua" => "Технічний директор",
-    "rus" => "Технический директор",
-    "en" => "Technical director",
-    "de" => "Technischer Leiter",
-    "sp" => "Director técnico",
-  ],
-  "office" => [
-    "ua" => "Головний офіс",
-    "rus" => "Головной офис",
-    "en" => "Head Office",
-    "de" => "Hauptsitz",
-    "sp" => "Contactos",
-  ],
-  "adress" => [
-    "ua" => "Україна Львів, 79000,<br> вул. Стрийська, 45",
-    "rus" => "Украина г. Львов, 79000,<br> ул. Стрыйская, 45",
-    "en" => "Ukraine Lviv, 79000,<br> Stryyska St, 45",
-    "de" => "Ukraine Lemberg, 79000,<br> Stryyska St, 45",
-    "sp" => "Ucrania Lviv, 79000,<br> Stryyska St, 45",
-  ],
-  "message" => [
-    "ua" => "Залишайтесь <br>
-    на зв’язку",
-    "rus" => "Оставайтесь <br>
-    на связи",
-    "en" => "Stay <br>
-    in touch",
-    "de" => "Bleiben Sie <br>
-    in Kontakt",
-    "sp" => "Quédate <br>
-    en contacto",
-  ],
-];
-
-$lng = "ua";
-if (!empty($_REQUEST["lang"])) {
-  $lng = $_REQUEST["lang"];
-}
-if (empty($tt["contacts"][$lng])) {
-  $lng = "ua";
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,8 +10,8 @@ if (empty($tt["contacts"][$lng])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>
-      <?php echo $tt["contacts"][$lng] ?>
+    <title class="a">
+      Контакти
     </title>
   </head>
 
@@ -92,21 +19,19 @@ if (empty($tt["contacts"][$lng])) {
     <header class="header">
       <div class="container">
         <div class="header__content">
-          <a href="/?lang=<?php echo $lng ?>" class="header__logo header__logo--cont"></a>
+          <a href="/" class="header__logo header__logo--cont" id="logoC"></a>
           <div class="header__sub">
-            <a href="./contact.php?lang=<?php echo $lng ?>" class="header__contact header__contact--cont">
-              <?php echo $tt["contacts"][$lng] ?>
+            <a href="./contact.html" class="header__contact header__contact--cont lng-contacts" id="contactC">
+              Контакти
             </a>
             <select class="header__lang lang header__lang--cont">
-              <option value="Укр">Укр</option>
-              <option value="Рус">Рус</option>
-              <option value="Eng">Eng</option>
-              <option value="Нем">Нем</option>
-              <option value="Исп">Исп</option>
+              <option value="ua" selected>Укр</option>
+              <option value="rus">Рус</option>
+              <option value="en">Eng</option>
+              <option value="de">Нем</option>
+              <option value="sp">Исп</option>
             </select>
           </div>
-
-
         </div>
       </div>
     </header>
@@ -117,34 +42,34 @@ if (empty($tt["contacts"][$lng])) {
           <article class="content__left left">
             <div class="left__founder">
               <img src="/images/founder.png" class="left__image" alt="Лук'янчук М.О.">
-              <div class="left__name">
-                <?php echo $tt["name1"][$lng] ?>
+              <div class="left__name lng-name1">
+                Лук'янчук М.О.
               </div>
-              <div class="left__pos">
-                <?php echo $tt["status1"][$lng] ?>
+              <div class="left__pos lng-status1">
+                Засновник
               </div>
             </div>
             <div class="left__boss">
               <img src="/images/boss.png" class="left__image" alt="Чоповенко О.Г.">
-              <div class="left__name">
-                <?php echo $tt["name2"][$lng] ?>
+              <div class="left__name lng-name2">
+                Чоповенко О.Г.
               </div>
-              <div class="left__pos">
-                <?php echo $tt["status2"][$lng] ?>
+              <div class="left__pos lng-status2">
+                Технічний директор
               </div>
             </div>
           </article>
           <article class="content__right right">
             <div class="right__el right__el--title">
               <div class="right__icon right__icon--empty"></div>
-              <div class="right__text right__text--title">
-                <?php echo $tt["office"][$lng] ?>
+              <div class="right__text right__text--title lng-office">
+                Головний офіс
               </div>
             </div>
             <div class="right__el">
               <div class="right__icon right__icon--adr"></div>
-              <a target="_blank" href="https://goo.gl/maps/V3TYuT43XSTMpSrF6" class="right__text">
-                <?php echo $tt["adress"][$lng] ?>
+              <a target="_blank" href="https://goo.gl/maps/V3TYuT43XSTMpSrF6" class="right__text lng-adress">
+                Україна Львів, 79000,<br> вул. Стрийська, 45
               </a>
             </div>
             <div class="right__el">
@@ -167,7 +92,8 @@ if (empty($tt["contacts"][$lng])) {
             <div class="right__el">
               <div class="right__icon right__icon--clock"></div>
               <div class="right__text">
-              <span style="color: #878E92;">Пн...Сб:&#160;</span>9:00 — 18:00&#160;&#160;&#160;<span style="color: #878E92;">Неділя:&#160;</span> вихідний
+                <span style="color: #878E92;">Пн...Сб:&#160;</span>9:00 — 18:00&#160;&#160;&#160;<span
+                  style="color: #878E92;">Неділя:&#160;</span> вихідний
               </div>
             </div>
           </article>
@@ -179,8 +105,9 @@ if (empty($tt["contacts"][$lng])) {
       <div class="container">
         <div class="footer__wrapper">
           <div class="footer__content">
-            <div class="footer__text">
-              <?php echo $tt["message"][$lng] ?>
+            <div class="footer__text lng-message">
+              Залишайтесь <br>
+              на зв’язку
             </div>
             <div class="footer__icons">
               <a href="https://www.facebook.com/profile.php?id=100092285056429" target="_blank"
@@ -204,6 +131,8 @@ if (empty($tt["contacts"][$lng])) {
         </div>
       </div>
     </footer>
+    <script src="arr-cont-tr.js"></script>
+    <script src="main2.js"></script>
   </body>
 
 </html>

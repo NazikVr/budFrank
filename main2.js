@@ -1,12 +1,3 @@
-$(document).ready(function () {
-  $('.slider').slick({
-    autoplay: true,
-    speed: 1500,
-    autoplaySpeed: 3000,
-    dots: true,
-  });
-});
-
 const select = document.querySelector('select');
 const allLang = ['ua', 'rus', 'en', 'de', 'sp']
 
@@ -27,16 +18,16 @@ function changeLanguage() {
     location.reload();
   }
   select.value = hash;
-  document.querySelector('title').innerHTML = langArr['company'][hash];
+  document.querySelector('title').innerHTML = langArr['contacts'][hash];
   for (let key in langArr) {
     let elem = document.querySelector('.lng-' + key);
     if (elem) {
       elem.innerHTML = langArr[key][hash];
     }
   }
-  let linkLog = document.getElementById('logo');
+  let linkLog = document.getElementById('logoC');
   linkLog.href += '#' + hash;
-  let linlCont = document.getElementById('contact');
+  let linlCont = document.getElementById('contactC');
   linlCont.href += '#' + hash;
 }
 
