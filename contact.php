@@ -150,20 +150,24 @@ if (empty($tt["contacts"][$lng])) {
             <div class="right__el">
               <div class="right__icon right__icon--tel"></div>
               <a href="tel:+380675992818" class="right__text">
-                +38 067 599-28-18
+                <span style="color: #878E92;">+38&#160;</span>
+                <span style="color: #878E92; font-weight: 700">067&#160;</span>
+                599-28-18
               </a>
             </div>
             <div class="right__el">
               <div class="right__icon right__icon--email"></div>
               <a href="mailto:budfrank.ua@gmail.com" class="right__text">
-                budfrank.ua@gmail.com
+                budfrank.ua
+                <span style="color: #878E92;">
+                  @gmail.com
+                </span>
               </a>
             </div>
             <div class="right__el">
               <div class="right__icon right__icon--clock"></div>
               <div class="right__text">
-                Пн...Сб: 9:00 — 18:00 <br>
-                Неділя: вихідний
+              <span style="color: #878E92;">Пн...Сб:&#160;</span>9:00 — 18:00&#160;&#160;&#160;<span style="color: #878E92;">Неділя:&#160;</span> вихідний
               </div>
             </div>
           </article>
@@ -176,7 +180,7 @@ if (empty($tt["contacts"][$lng])) {
         <div class="footer__wrapper">
           <div class="footer__content">
             <div class="footer__text">
-            <?php echo $tt["message"][$lng] ?>
+              <?php echo $tt["message"][$lng] ?>
             </div>
             <div class="footer__icons">
               <a href="https://www.facebook.com/profile.php?id=100092285056429" target="_blank"
