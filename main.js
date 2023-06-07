@@ -1,11 +1,27 @@
-$(document).ready(function () {
-  $('.slider').slick({
-    autoplay: true,
-    speed: 1500,
-    autoplaySpeed: 3000,
-    dots: true,
-  });
+$('.slider').on('init afterChange', function (event, slick, currentSlide, nextSlide) {
+  let totalSlides = slick.slideCount;
+  let currentSlideIndex = currentSlide + 1;
+
+  
+  if (isNaN(currentSlideIndex)) {
+    $('.slider-num').html( '1' + ' / ' + totalSlides);
+  } else {
+    $('.slider-num').html(currentSlideIndex + ' / ' + totalSlides);
+  }
 });
+
+$('.slider').slick({
+  autoplay: true,
+  speed: 1500,
+  autoplaySpeed: 3333,
+  dots: true,
+  swipeToSlide: true,
+  swipe: true,
+  vertical: true,
+  verticalSwiping: true,
+  mouseWheel: true,
+});
+
 
 const select = document.querySelector('select');
 const allLang = ['ua', 'rus', 'en', 'de', 'sp']
