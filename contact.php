@@ -1,16 +1,65 @@
 <?php
 $tt = [
-  "Contacts" => [
+  "contacts" => [
     "ua" => "Контакти",
+    "rus" => "Контакты",
     "en" => "Contacts",
-    "rus" => "Контакт",
-    "den" => "foo",
+    "de" => "Kontakte",
+    "sp" => "Contactos",
   ],
-  "text2" => [
-    "ua" => "БУДФРАНК",
-    "en" => "budfrank",
-    "rus" => "БУДФРАНК",
-    "den" => "sdasdasda",
+  "name1" => [
+    "ua" => "Лук'янчук М.О.",
+    "rus" => "Лукьянчук Н.О.",
+    "en" => "Lukyanchuk M.O.",
+    "de" => "Lukyanchuk M.O.",
+    "sp" => "Lukyanchuk M.O.",
+  ],
+  "status1" => [
+    "ua" => "Засновник",
+    "rus" => "Учредитель",
+    "en" => "Founder",
+    "de" => "Gründer",
+    "sp" => "Fundador",
+  ],
+  "name2" => [
+    "ua" => "Чоповенко О.Г.",
+    "rus" => "Чоповенко А.Г.",
+    "en" => "Chopovenko O.G.",
+    "de" => "Chopovenko O.G.",
+    "sp" => "Chopovenko O.G.",
+  ],
+  "status2" => [
+    "ua" => "Технічний директор",
+    "rus" => "Технический директор",
+    "en" => "Technical director",
+    "de" => "Technischer Leiter",
+    "sp" => "Director técnico",
+  ],
+  "office" => [
+    "ua" => "Головний офіс",
+    "rus" => "Головной офис",
+    "en" => "Head Office",
+    "de" => "Hauptsitz",
+    "sp" => "Contactos",
+  ],
+  "adress" => [
+    "ua" => "Україна Львів, 79000,<br> вул. Стрийська, 45",
+    "rus" => "Украина г. Львов, 79000,<br> ул. Стрыйская, 45",
+    "en" => "Ukraine Lviv, 79000,<br> Stryyska St, 45",
+    "de" => "Ukraine Lemberg, 79000,<br> Stryyska St, 45",
+    "sp" => "Ucrania Lviv, 79000,<br> Stryyska St, 45",
+  ],
+  "message" => [
+    "ua" => "Залишайтесь <br>
+    на зв’язку",
+    "rus" => "Оставайтесь <br>
+    на связи",
+    "en" => "Stay <br>
+    in touch",
+    "de" => "Bleiben Sie <br>
+    in Kontakt",
+    "sp" => "Quédate <br>
+    en contacto",
   ],
 ];
 
@@ -18,7 +67,7 @@ $lng = "ua";
 if (!empty($_REQUEST["lang"])) {
   $lng = $_REQUEST["lang"];
 }
-if (empty($tt["text2"][$lng])) {
+if (empty($tt["contacts"][$lng])) {
   $lng = "ua";
 }
 ?>
@@ -34,7 +83,9 @@ if (empty($tt["text2"][$lng])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>Контакти</title>
+    <title>
+      <?php echo $tt["contacts"][$lng] ?>
+    </title>
   </head>
 
   <body class="page__body">
@@ -44,10 +95,10 @@ if (empty($tt["text2"][$lng])) {
           <a href="/?lang=<?php echo $lng ?>" class="header__logo header__logo--cont"></a>
           <div class="header__sub">
             <a href="./contact.php?lang=<?php echo $lng ?>" class="header__contact header__contact--cont">
-              Контакти
+              <?php echo $tt["contacts"][$lng] ?>
             </a>
             <select class="header__lang lang header__lang--cont">
-              <option class="ukr" value="Укр">Укр</option>
+              <option value="Укр">Укр</option>
               <option value="Рус">Рус</option>
               <option value="Eng">Eng</option>
               <option value="Нем">Нем</option>
@@ -67,19 +118,19 @@ if (empty($tt["text2"][$lng])) {
             <div class="left__founder">
               <img src="/images/founder.png" class="left__image" alt="Лук'янчук М.О.">
               <div class="left__name">
-                Лук'янчук М.О.
+                <?php echo $tt["name1"][$lng] ?>
               </div>
               <div class="left__pos">
-                Засновник
+                <?php echo $tt["status1"][$lng] ?>
               </div>
             </div>
             <div class="left__boss">
               <img src="/images/boss.png" class="left__image" alt="Чоповенко О.Г.">
               <div class="left__name">
-                Чоповенко О.Г.
+                <?php echo $tt["name2"][$lng] ?>
               </div>
               <div class="left__pos">
-                Технічний директор
+                <?php echo $tt["status2"][$lng] ?>
               </div>
             </div>
           </article>
@@ -87,14 +138,13 @@ if (empty($tt["text2"][$lng])) {
             <div class="right__el right__el--title">
               <div class="right__icon right__icon--empty"></div>
               <div class="right__text right__text--title">
-                Головний офіс
+                <?php echo $tt["office"][$lng] ?>
               </div>
             </div>
             <div class="right__el">
               <div class="right__icon right__icon--adr"></div>
               <a target="_blank" href="https://goo.gl/maps/V3TYuT43XSTMpSrF6" class="right__text">
-                Україна, Львів, 79000,<br>
-                вул. Стрийська, 45
+                <?php echo $tt["adress"][$lng] ?>
               </a>
             </div>
             <div class="right__el">
@@ -126,8 +176,7 @@ if (empty($tt["text2"][$lng])) {
         <div class="footer__wrapper">
           <div class="footer__content">
             <div class="footer__text">
-              Залишайтесь <br>
-              на зв’язку
+            <?php echo $tt["message"][$lng] ?>
             </div>
             <div class="footer__icons">
               <a href="https://www.facebook.com/profile.php?id=100092285056429" target="_blank"
