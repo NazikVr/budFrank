@@ -416,12 +416,12 @@
   &__logo {
     width: 56px;
     height: 56px;
-    background-image: url(../images/Vector.svg);
+    background-image: url(../images/logo.png);
     background-position: center;
     background-size: cover;
     
     &--cont {
-      background-image: url(../images/homesvg.svg);
+      background-image: url(../images/logo-white.svg);
     }
 
     @include onDesktop {
