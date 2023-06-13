@@ -333,7 +333,7 @@
   &__sub {
     font-family: "Inter", sans-serif;
     font-weight: 400;
-    width: 155px;
+    width: 250px;
     display: flex;
     justify-content: space-around;
   }
@@ -352,7 +352,7 @@
     background-image: url(../images/logo.png);
     background-position: center;
     background-size: cover;
-    
+
     &--cont {
       background-image: url(../images/logo-white.svg);
     }
@@ -398,7 +398,7 @@
     }
 
     @include onDesktop {
-      width: 100px;
+      width: 100px !important;
       height: 32px;
     }
   }

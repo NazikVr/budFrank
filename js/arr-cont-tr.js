@@ -39,8 +39,8 @@ const langArr = {
     "ua": "Головний офіс",
     "rus": "Головной офис",
     "en": "Head Office",
-    "de": "Hauptsitz",
-    "sp": "Contactos",
+    "de": "Hauptbüro",
+    "sp": "Oficina principal",
   },
   "adress": {
     "ua": "Україна Львів, 79000,<br> вул. Стрийська, 45",
@@ -60,5 +60,33 @@ const langArr = {
     in Kontakt`,
     "sp": `Quédate <br>
     en contacto`,
+  },
+  "text1":{
+    "ua": "Пн...Сб:",
+    "rus": "Пн...Сб:",
+    "en": "Mon...Sat:",
+    "de": "Mo...Sa:",
+    "sp": "lun...sab:",
+  },
+  "text2":{
+    "ua": "Неділя:",
+    "rus": "Воскресенье:",
+    "en": "Sunday:",
+    "de": "Sonntag:",
+    "sp": "Domingo:",
+  },
+  "text3":{
+    "ua": "вихідний",
+    "rus": "выходной",
+    "en": "day off",
+    "de": "freier Tag",
+    "sp": "día libre",
+  },
+  "text4":{
+    "ua": "9:00 - 18:00",
+    "rus": "9:00 - 18:00",
+    "en": "9:00 - 18:00",
+    "de": "9:00 - 18:00 Uhr",
+    "sp": "9:00 - 18:00",
   },
 };
