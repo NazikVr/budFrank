@@ -7,6 +7,13 @@ const langArr = {
     "de": "Kontakte",
     "sp": "Contactos",
   },
+  "gallery" : {
+    "ua": "Галерея",
+    "rus": "Галерея",
+    "en": "Gallery",
+    "de": "Galerie",
+    "sp": "Galería",
+  },
   "name1": {
     "ua": "Лук'янчук М.О.",
     "rus": "Лукьянчук Н.О.",

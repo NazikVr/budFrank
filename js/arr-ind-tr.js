@@ -6,6 +6,13 @@ let langArr = {
     "de": "Kontakte",
     "sp": "Contactos",
   },
+  "gallery" : {
+    "ua": "Галерея",
+    "rus": "Галерея",
+    "en": "Gallery",
+    "de": "Galerie",
+    "sp": "Galería",
+  },
   "company": {
     "ua": "БУДФРАНК",
     "rus": "БУДФРАНК",

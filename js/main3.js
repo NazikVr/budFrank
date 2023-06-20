@@ -18,7 +18,7 @@ function changeLanguage() {
     location.reload();
   }
   select.value = hash;
-  document.querySelector('title').innerHTML = langArr['contacts'][hash];
+  document.querySelector('title').innerHTML = langArr['gallery'][hash];
   for (let key in langArr) {
     let elem = document.querySelector('.lng-' + key);
     if (elem) {
@@ -26,11 +26,11 @@ function changeLanguage() {
     }
   }
   // Беремо ссилку з елемента і добавляємо до неї hash який дорівнює в нас select value тобто абревіатура мови включеної, таким чином нас перекидає на другу сторінку з включеною мовою як і на цій
-  let linkLog = document.getElementById('logoC');
+  let linkLog = document.getElementById('logoG');
   linkLog.href += '#' + hash;
-  let linlCont = document.getElementById('contactC');
-  linlCont.href += '#' + hash;
-  let linkGal = document.getElementById('galleryC');
+  let linkCont = document.getElementById('contactG');
+  linkCont.href += '#' + hash;
+  let linkGal = document.getElementById('galleryG');
   linkGal.href += '#' + hash;
 }
 

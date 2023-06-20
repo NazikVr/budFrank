@@ -1,6 +1,6 @@
 @import "vars";
 @import "mixins";
-@import "slider";
+@import "grid";
 
 * {
   padding: 0;
@@ -23,11 +23,12 @@
     }
   }
 
-  &__content {
-  }
-
   &__footer {
     margin-bottom: 87px;
+  }
+
+  &__grid {
+    padding-bottom: 64px;
   }
 }
 
@@ -364,6 +365,7 @@
   }
 
   &__contact {
+    padding: 0 15px;
     line-height: 24px;
     font-size: 12px;
     text-decoration: none;
@@ -371,7 +373,8 @@
     color: $bacgroundColor;
 
     &--cont {
-      color: $name;
+      background-color: $name;
+      color: $bacgroundColor;
     }
 
     @include onDesktop {
@@ -381,7 +384,40 @@
     }
   }
 
+  &__gallery {
+    text-align: center;
+    line-height: 24px;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    color: $name;
+    background-color: $bacgroundColor;
+    width: 72px;
+    text-align: center;
+
+    &--cont {
+      color: $bacgroundColor;
+    }
+
+    &--main {
+      background-color: transparent;
+      color: $bacgroundColor;
+    }
+
+    @include onDesktop {
+      padding: 5px 15px;
+      width: 96px;
+      font-size: 16px;
+      margin-right: 40px;
+    }
+
+    @include onTV {
+      width: 136px;
+    }
+  }
+
   &__lang {
+    padding: 5px 15px;
     position: relative;
     text-align: center;
     font-size: 12px;
@@ -660,4 +696,96 @@
 .slider-item {
   max-width: 100%;
   height: 100vh;
+}
+
+.gallery {
+  &__ph-1 {
+    width: 128px;
+    height: 128px;
+
+    @include onDesktop {
+      width: 353px;
+      height: 353px;
+    }
+
+    @include onTV {
+      width: 512px;
+      height: 512px;
+    }
+  }
+
+  &__ph-2 {
+    width: 128px;
+    height: 128px;
+
+    @include onDesktop {
+      width: 353px;
+      height: 353px;
+    }
+
+    @include onTV {
+      width: 512px;
+      height: 512px;
+    }
+  }
+
+  &__ph-3 {
+    width: 272px;
+    height: 272px;
+
+    @include onDesktop {
+      width: 353px;
+      height: 353px;
+    }
+
+    @include onTV {
+      width: 512px;
+      height: 512px;
+    }
+  }
+
+  &__ph-4 {
+    width: 272px;
+    height: 360px;
+
+    @include onDesktop {
+      width: 544px;
+      height: 728px;
+    }
+
+    @include onTV {
+      width: 784px;
+      height: 1048px;
+    }
+  }
+
+  &__ph-5 {
+    width: 272px;
+    height: 360px;
+
+    @include onDesktop {
+      width: 544px;
+      height: 728px;
+    }
+
+    @include onTV {
+      width: 784px;
+      height: 1048px;
+    }
+  }
+
+  &__ph-6 {
+    width: 272px;
+    height: 176px;
+
+    @include onDesktop {
+      width: 1120px;
+      height: 744px;
+    }
+
+    @include onTV {
+      width: 1600px;
+      height: 1064px;
+    }
+  }
 }

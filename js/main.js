@@ -54,6 +54,8 @@ function changeLanguage() {
   linkLog.href += '#' + hash;
   let linlCont = document.getElementById('contact');
   linlCont.href += '#' + hash;
+  let linkGal = document.getElementById('gallery');
+  linkGal.href += '#' + hash;
 }
 
 changeLanguage();
