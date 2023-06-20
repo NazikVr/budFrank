@@ -1170,6 +1170,14 @@
   padding-top: 25px;
   margin-bottom: 100px;
 }
+.header--gallery {
+  margin-bottom: 32px;
+}
+@media (min-width: 1362px) {
+  .header--gallery {
+    margin-bottom: 56px;
+  }
+}
 .header__sub {
   font-family: "Inter", sans-serif;
   font-weight: 400;
